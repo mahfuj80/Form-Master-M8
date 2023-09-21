@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import Special from '../Special/Special';
+import Friend from '../Friend/Friend';
 const Cousin = ({ name, asset }) => {
   return (
     <div>
@@ -7,6 +8,7 @@ const Cousin = ({ name, asset }) => {
       <p>{name}</p>
       <section className="flex">
         {asset && <Special asset={asset}></Special>}
+        {name === 'Rafsana' && <Friend></Friend>}
       </section>
     </div>
   );
