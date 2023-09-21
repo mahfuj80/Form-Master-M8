@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 const ReusableForm = ({
   formTitle,
   handleSubmit,
@@ -15,6 +16,7 @@ const ReusableForm = ({
   };
   return (
     <div>
+      <h2>{formTitle}</h2>
       {children}
       <form onSubmit={handleLocalSubmit}>
         <input type="text" name="name" />
@@ -28,5 +30,10 @@ const ReusableForm = ({
     </div>
   );
 };
-
+ReusableForm.propTypes = {
+  formTitle: PropTypes.string,
+  handleSubmit: PropTypes.func,
+  submitButtonTitle: PropTypes.string,
+  children: PropTypes.jsx,
+};
 export default ReusableForm;
